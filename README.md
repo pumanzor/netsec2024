@@ -1,5 +1,5 @@
 > [!TIP]
-> netsec2024 | Fall 2024
+> netsec2024 | autumn 2024
 
 Pablo Umanzor A. | Ing. Electronico.
 
