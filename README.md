@@ -1,7 +1,7 @@
 > [!NOTE]
 > netsec2024 | autumn 2024
 ```
-**Pablo Umanzor A.** | Ing. Electronico.
+__Pablo Umanzor A.__ | Ing. Electronico.
 
 Profesor Academia Politecnica Militar
 Ejercito de Chile
