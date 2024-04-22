@@ -1,3 +1,4 @@
+> [!NOTE]
 > netsec2024 | autumn 2024
 
 Pablo Umanzor A. | Ing. Electronico.
