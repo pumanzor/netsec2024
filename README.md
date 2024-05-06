@@ -12,4 +12,4 @@
 email: pabloumanzor@gmail.com
 http://www.pabloumanzor.com
 ```
-Para acceder a los contenidos [click aqui](https://github.com/pumanzor/ssec2024/wiki)
+Para acceder a los contenidos [click aqui](https://github.com/pumanzor/ssec2024/wiki/Syllabus)
