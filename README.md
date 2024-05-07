@@ -1,5 +1,5 @@
 > [!TIP]
-> Seguridad en Sistemas y DBs | Autumn 2024
+> Seguridad en Sistemas y DBs | 2024
 
 ---
 > Pablo Umanzor A. | Ing. Electronico.
