@@ -1,5 +1,6 @@
-- Que es Seguridad? es dicifial definirlo en una sola frase pero quizas podemos obtener distintos puntos de vista dentro de esta lectura y llegar a un consenso.
+Intro
 
+- Que es Seguridad? es dicifial definirlo en una sola frase pero quizas podemos obtener distintos puntos de vista dentro de esta lectura y llegar a un consenso.
 * Muchos sistemas están conectados a Internet entonces podemos pensar que vamos a tener algun tipo de adversario. Por lo tanto, es posible que el diseño de muchos sistemas se deba abordar la seguridad, es decir, ¿seguira funcionando el sistema cuando haya un adversario o me esten atacando?
 
 
@@ -51,9 +52,8 @@ De manera similar, las VPN hacen que sea práctico mitigar el riesgo de permitir
 
 Lo que sale mal 
 
-**1. problemas con la política. Recuperacion de claves de un email, ejemplo del hack de sara palin**
+**1. problemas con la política. Recuperacion de claves de un email**
 
-https://www.wired.com/2012/08/apple-amazon-mat-honan-hacking/
 
 - Gmail password reset: send a verification link to a backup email address.-
 - Google helpfully prints part of the backup email address.
