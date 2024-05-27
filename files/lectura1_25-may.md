@@ -9,7 +9,7 @@ ok pensemos en seguridad , eso implica una objetivo (asegurar activos p.ej) vs a
 en general pensar en seguridad es romperlo o dividirlo en 3 partes
 
 
-* Politica: que es lo que esta permitido o no y vendria siendo la meta que queremos lograr, dar algunos ejemplos, solo esta permitido el puerto 443, solo algunos usuarios pueden acceder a ciertos archivos, no esta permitido el puerto 445, 139 por default cuando se crea una nueva maquina virtual, una politica tambien deberia permitir que los datos sean confidenciales (que ALM den los ej), integros (que los ALM den ej)  y que esten siempre disponibles (ALM den ej ej.)
+* Politica: que es lo que esta permitido o no y vendria siendo la meta que queremos lograr, dar algunos ejemplos, solo esta permitido el puerto 443, solo algunos usuarios pueden acceder a ciertos archivos, no esta permitido el puerto 445, 139 por default cuando se crea una nueva maquina virtual, una politica tambien deberia permitir que los datos sean confidenciales (que ALM den los ej), integros (ej)  y que esten siempre disponibles (ej.)
 
 -- Objetivos comunes de la política: confidencialidad, integridad, disponibilidad
 
