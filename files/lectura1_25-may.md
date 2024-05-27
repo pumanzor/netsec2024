@@ -1,6 +1,6 @@
 Intro
 
-- Que es Seguridad? es dicifial definirlo en una sola frase pero quizas podemos obtener distintos puntos de vista dentro de esta lectura y llegar a un consenso.
+- Que es Seguridad? es dificil definirlo en una sola frase pero quizas podemos obtener distintos puntos de vista dentro de esta lectura y llegar a un consenso.
 * Muchos sistemas están conectados a Internet entonces podemos pensar que vamos a tener algun tipo de adversario. Por lo tanto, es posible que el diseño de muchos sistemas se deba abordar la seguridad, es decir, ¿seguira funcionando el sistema cuando haya un adversario o me esten atacando?
 
 
