@@ -33,3 +33,17 @@ user:role:type[:range]
   - Un rango que consiste en dos niveles de seguridad (uno bajo y uno alto) separados por un guion (por ejemplo, *s0 - s15:c0.c1023*).
   
 - Estos componentes se discuten en la sección de [**Niveles de Seguridad**](mls_mcs.md#security-levels).
+
+
+Sin embargo, ten en cuenta que:
+
+1. Las decisiones de acceso relacionadas con un sujeto hacen uso de todos los componentes del **contexto de seguridad**.
+2. Las decisiones de acceso relacionadas con un objeto hacen uso de los componentes de la siguiente manera:
+    1. El usuario se establece en un usuario especial llamado *system_u* o se establece en el id. de usuario de SELinux del proceso creador. Es posible agregar restricciones a los usuarios dentro de la política basadas en su clase de objeto (un ejemplo de esto es la opción UBAC (Control de Acceso Basado en Usuarios) de la Política de Referencia).
+    2. El rol generalmente se establece en un rol interno especial de SELinux llamado *object_r*, aunque la versión de la política 26 con el kernel 2.6.39 y superiores admiten transiciones de rol en cualquier clase de objeto. Es posible agregar restricciones al rol dentro de la política basadas en su clase de objeto.
+
+La sección [**Cálculo de Contextos de Seguridad**](computing_security_contexts.md#computing-security-contexts) describe cómo SELinux calcula los componentes del contexto de seguridad basándose en un *contexto de origen*, *contexto de destino* y la *clase* del objeto.
+
+Los ejemplos a continuación muestran contextos de seguridad para procesos, directorios y archivos (nota que la política no admitía MCS o MLS, por lo tanto, no hay campo *nivel*):
+
+**Ejemplo de Contexto de Seguridad de un Proceso:**
