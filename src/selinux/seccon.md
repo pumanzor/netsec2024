@@ -7,3 +7,8 @@ El contexto de seguridad también se conoce como una 'etiqueta de seguridad' o s
 
 Dentro de SELinux, un contexto de seguridad se representa como cadenas de longitud variable que definen el usuario de SELinux (esto no es el id. de usuario de Linux. El id. de usuario de Linux se asigna 
 al id. de usuario de SELinux mediante archivos de configuración), su rol, un identificador de tipo y un rango o nivel de seguridad MCS/MLS opcional de la siguiente manera:
+
+
+```
+user:role:type[:range]
+```
