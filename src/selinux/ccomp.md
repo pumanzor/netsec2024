@@ -30,7 +30,10 @@ Para permitir que los administradores del sistema gestionen la política, el ent
 
 Para asegurar que los eventos de seguridad se registren, GNU/Linux tiene un servicio de auditoría que captura las violaciones de políticas. La sección de Eventos de Auditoría describe el formato de estos eventos de seguridad.
 
-**[[ PREV ]](selinux_overview.md)** **[[ TOP ]](#)** **[[ NEXT ]](mac.md)**
 SELinux soporta servicios de red que se describen en la sección Soporte de Redes de SELinux.
 
 La sección del Módulo de Seguridad de Linux y SELinux entra en mayor detalle sobre los módulos LSM/SELinux con un recorrido de un proceso fork(2) y exec(2).
+
+
+
+**[[ PREV ]](selinux_overview.md)** **[[ TOP ]](#)** **[[ NEXT ]](mac.md)**
