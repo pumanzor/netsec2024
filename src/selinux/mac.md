@@ -30,3 +30,7 @@ Los servicios de MLS/MCS ahora se utilizan más generalmente para mantener la se
 
 - Máquinas virtuales usan categorías MCS para permitir que cada VM se ejecute dentro de su propio dominio para aislar las VMs entre sí (ver la sección de [**Soporte de Máquinas Virtuales en SELinux**](vm_support.md#selinux-virtual-machine-support)).
 - Dispositivos Android usan categorías MCS generadas dinámicamente para que una aplicación que se ejecuta en nombre de un usuario no pueda leer o escribir archivos creados por la misma aplicación que se ejecuta en nombre de otro usuario (ver la sección de [**Mejoras de Seguridad para Android - Computación de un Contexto**](seandroid.md#computing-process-context-examples)).
+
+
+---
+**[[ PREV ]](ccomp.md)** **[[ TOP ]](#)** **[[ NEXT ]](users.md)**
