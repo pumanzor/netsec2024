@@ -32,3 +32,27 @@ ha alcanzado el mismo estatus que SELinux, incluso si hay algunos buenos argumen
 
 Debido a que muchas organizaciones están solicitando que SELinux esté en las distribuciones de Linux que están utilizando, SUSE ofrece soporte para el marco de SELinux en SUSE Linux Enterprise Server. 
 Esto no significa que la instalación predeterminada de SUSE Linux Enterprise Server cambiará de AppArmor a SELinux en un futuro cercano.
+
+### Estado de Soporte
+
+El marco SELinux es compatible con SUSE Linux Enterprise Server. Esto significa que SLES ofrece todos los binarios y bibliotecas necesarios para poder usar SELinux en tu servidor. Sin embargo, puede que falte algún software con el que estés familiarizado de otras distribuciones de Linux.
+
+El soporte para SELinux está en una etapa bastante temprana en SUSE Linux Enterprise Server, lo que significa que puede ocurrir un comportamiento inesperado. Para limitar este riesgo lo más posible, es mejor usar solo los binarios que se han proporcionado por defecto en SUSE Linux Enterprise Server.
+
+### 32.1.2 Entendiendo los Componentes de SELinux
+
+Antes de comenzar la configuración de SELinux, debes conocer un poco sobre cómo está organizado SELinux. Tres componentes juegan un papel:
+
+- El marco de seguridad en el núcleo de Linux
+- Las bibliotecas y binarios de SELinux
+- La política de SELinux
+
+El núcleo predeterminado de SUSE Linux Enterprise Server soporta SELinux y las herramientas necesarias para gestionarlo. La parte más importante del trabajo del administrador con respecto a SELinux es la gestión de la política.
+
+En la política de SELinux, se aplican etiquetas de seguridad a diferentes objetos en un servidor Linux. Estos objetos suelen ser usuarios, puertos, procesos y archivos. Usando estas etiquetas de seguridad, se crean reglas que definen lo que está permitido y lo que no en un servidor. Recuerda, por defecto SELinux niega todo, y al crear las reglas adecuadas, puedes permitir el acceso que es estrictamente necesario. Por lo tanto, deben existir reglas para todos los programas que desees usar en un sistema. Alternativamente, puedes configurar partes de un sistema para que funcionen en modo no confinado, lo que significa que puertos, programas, usuarios, archivos y directorios específicos no están protegidos por SELinux. Este modo es útil si solo deseas usar SELinux para proteger algunos servicios esenciales, mientras que no te preocupan específicamente otros servicios. Para obtener un sistema realmente seguro, deberías evitar esto.
+
+Para asegurar la protección adecuada de tu sistema, necesitas una política de SELinux. Esta debe ser una política hecha a medida en la que todos los archivos estén provistos de una etiqueta, y todos los servicios y usuarios tengan una etiqueta de seguridad también para expresar qué archivos y directorios pueden ser accedidos por qué usuario y procesados en el servidor. Desarrollar una política de este tipo requiere una gran cantidad de trabajo.
+
+La complejidad de SELinux es también uno de los principales argumentos en contra de su uso. Debido a que un sistema Linux típico es muy complejo, es fácil pasar algo por alto y dejar una abertura que los intrusos pueden aprovechar para ingresar a tu sistema. E incluso si está configurado completamente como debería, sigue siendo muy difícil para un administrador supervisar todos los aspectos con SELinux. Con respecto a la complejidad, AppArmor adopta un enfoque completamente diferente y funciona con procedimientos automatizados que permiten al administrador configurar la protección de AppArmor y entender exactamente lo que está sucediendo.
+
+Ten en cuenta que una política de SELinux disponible libremente podría funcionar en tu servidor, pero es poco probable que ofrezca la misma protección que una política personalizada. SUSE tampoco soporta políticas de terceros.
