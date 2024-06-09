@@ -12,3 +12,24 @@ al id. de usuario de SELinux mediante archivos de configuración), su rol, un id
 ```
 user:role:type[:range]
 ```
+**Donde:**
+
+*usuario*
+
+- El identificador de usuario de SELinux. Este puede estar asociado con uno o más roles que el usuario de SELinux tiene permitido usar.
+
+*rol*
+
+- El rol de SELinux. Este puede estar asociado con uno o más tipos a los que el usuario de SELinux tiene permitido acceder.
+
+*tipo*
+
+- Cuando un tipo está asociado con un proceso, define a qué procesos (o dominios) puede acceder el usuario de SELinux (el sujeto). Cuando un tipo está asociado con un objeto, define qué permisos de acceso tiene el usuario de SELinux a ese objeto.
+
+*rango*
+
+- Este campo también puede conocerse como un *nivel* y solo está presente si la política admite MCS o MLS. La entrada puede consistir en:
+  - Un único nivel de seguridad que contiene un nivel de sensibilidad y cero o más categorías (por ejemplo, *s0*, *s1:c0*, *s7:c10.c15*).
+  - Un rango que consiste en dos niveles de seguridad (uno bajo y uno alto) separados por un guion (por ejemplo, *s0 - s15:c0.c1023*).
+  
+- Estos componentes se discuten en la sección de [**Niveles de Seguridad**](mls_mcs.md#security-levels).
