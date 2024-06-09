@@ -18,7 +18,7 @@ Cada objeto consta de un identificador de clase que define su propósito (por ej
 servicios puede manejar el objeto (leer, escribir, enviar, etc.). Cuando un objeto se instancia, se le asigna un nombre (por ejemplo, un archivo podría llamarse config o un socket my_connection) y un 
 contexto de seguridad (por ejemplo, *system_u:object_r:selinux_config_t*) como se muestra en la **Figura 5: Clase de Objeto = 'archivo' y permisos**.
 
-![](./images/5-object-class.png)
+![](https://github.com/pumanzor/ssec2024/blob/main/src/selinux/img/object-class.png)
 
 **Figura 5: Clase de Objeto = 'archivo' y permisos** - *las reglas de la política definirían aquellos permisos permitidos para cada proceso que necesita acceso al archivo /etc/selinux/config.*
 
