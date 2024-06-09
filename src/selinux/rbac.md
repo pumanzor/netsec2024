@@ -9,3 +9,11 @@ SELinux (es decir, solo se utiliza para identificar el componente del rol), aunq
 Es posible agregar restricciones y límites a los roles, como se discute en la sección de [**Aplicación de Tipo**](type_enforcement.md#type-enforcement).
 
 Algunas políticas, por ejemplo Android, solo hacen uso de un rol llamado *r*.
+
+
+![](https://github.com/pumanzor/ssec2024/blob/main/src/selinux/img/rbac.png)
+
+**Figura 4: Control de Acceso Basado en Roles** - *Muestra cómo SELinux controla el acceso mediante la asociación de usuario, rol y tipo de dominio.*
+
+---
+**[[ PREV ]](users.md)** **[[ TOP ]](#)** **[[ NEXT ]](typeen.md)**
