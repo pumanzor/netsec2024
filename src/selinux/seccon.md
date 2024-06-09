@@ -47,3 +47,48 @@ La sección [**Cálculo de Contextos de Seguridad**](computing_security_contexts
 Los ejemplos a continuación muestran contextos de seguridad para procesos, directorios y archivos (nota que la política no admitía MCS o MLS, por lo tanto, no hay campo *nivel*):
 
 **Ejemplo de Contexto de Seguridad de un Proceso:**
+
+```
+# These are process security contexts taken from a ps -Z command
+# (edited for clarity) that show four processes:
+
+LABEL                                       PID  TTY   CMD
+unconfined_u:unconfined_r:unconfined_t      2539 pts/0 bash
+unconfined_u:message_filter_r:ext_gateway_t 3134 pts/0 secure_server
+unconfined_u:message_filter_r:int_gateway_t 3138 pts/0 secure_server
+unconfined_u:unconfined_r:unconfined_t      3146 pts/0 ps
+
+# Note the bash and ps processes are running under the
+# unconfined_t domain, however the secure_server has two instances
+# running under two different domains (ext_gateway_t and
+# int_gateway_t). Also note that they are using the
+# message_filter_r role whereas bash and ps use unconfined_r.
+#
+# These results were obtained by running the system in permissive mode.
+```
+
+**Example Object Security Context:**
+
+```
+# These are the message queue directory object security contexts
+# taken from an ls -Zd command (edited for clarity):
+system_u:object_r:in_queue_t /usr/message_queue/in_queue
+system_u:object_r:out_queue_t /usr/message_queue/out_queue
+
+# Note that they are instantiated with system_u and object_r
+```
+
+```
+# These are the message queue file object security contexts
+# taken from an ls -Z command (edited for clarity):
+/usr/message_queue/in_queue:
+unconfined_u:object_r:in_file_t Message-1
+unconfined_u:object_r:in_file_t Message-2
+/usr/message_queue/out_queue:
+unconfined_u:object_r:out_file_t Message-10
+unconfined_u:object_r:out_file_t Message-11
+
+# Note that they are instantiated with unconfined_u as that was
+# the SELinux user id of the process that created the files
+# (see the process example above). The role remained as object_r.
+```
