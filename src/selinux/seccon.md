@@ -95,4 +95,4 @@ unconfined_u:object_r:out_file_t Message-11
 El nombre de usuario *system_u* no es obligatorio, se utiliza para significar a un usuario especial en la Política de Referencia. También se utiliza en algunas utilidades de SELinux.
 
 ---
-**[[ PREV ]](type_enforcement.md)** **[[ TOP ]](#)** **[[ NEXT ]](subjects.md)**
+**[[ PREV ]](typeen.md)** **[[ TOP ]](#)** **[[ NEXT ]](subjects.md)**
