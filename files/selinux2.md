@@ -56,3 +56,44 @@ Para asegurar la protección adecuada de tu sistema, necesitas una política de 
 La complejidad de SELinux es también uno de los principales argumentos en contra de su uso. Debido a que un sistema Linux típico es muy complejo, es fácil pasar algo por alto y dejar una abertura que los intrusos pueden aprovechar para ingresar a tu sistema. E incluso si está configurado completamente como debería, sigue siendo muy difícil para un administrador supervisar todos los aspectos con SELinux. Con respecto a la complejidad, AppArmor adopta un enfoque completamente diferente y funciona con procedimientos automatizados que permiten al administrador configurar la protección de AppArmor y entender exactamente lo que está sucediendo.
 
 Ten en cuenta que una política de SELinux disponible libremente podría funcionar en tu servidor, pero es poco probable que ofrezca la misma protección que una política personalizada. SUSE tampoco soporta políticas de terceros.
+
+### Política
+
+Como se mencionó, la política es el componente clave en SELinux. Define reglas que especifican qué objetos pueden acceder a qué archivos, directorios, puertos y procesos en un sistema. Para hacer esto, se define un contexto de seguridad para todos estos. En un sistema SELinux donde se ha aplicado la política para etiquetar el sistema de archivos, puedes usar el comando `ls -Z` en cualquier directorio para encontrar el contexto de seguridad de los archivos en ese directorio. El Ejemplo 32.1: "Configuraciones de Contexto de Seguridad Usando ls -Z" muestra las configuraciones de contexto de seguridad para los directorios en el directorio raíz (/) de un sistema SUSE Linux Enterprise Server con un sistema de archivos etiquetado por SELinux.
+
+#### Ejemplo 32.1: Configuraciones de Contexto de Seguridad Usando ls -Z
+
+    ls -Z
+    system_u:object_r:bin_t bin
+    system_u:object_r:boot_t boot
+    system_u:object_r:device_t dev
+    system_u:object_r:etc_t etc
+    system_u:object_r:home_root_t home
+    system_u:object_r:lib_t lib
+    system_u:object_r:lib_t lib64
+    system_u:object_r:lost_found_t lost+found
+    system_u:object_r:mnt_t media
+    system_u:object_r:mnt_t mnt
+    system_u:object_r:usr_t opt
+    system_u:object_r:proc_t proc
+    system_u:object_r:default_t root
+    system_u:object_r:bin_t sbin
+    system_u:object_r:security_t selinux
+    system_u:object_r:var_t srv
+    system_u:object_r:sysfs_t sys
+    system_u:object_r:tmp_t tmp
+    system_u:object_r:usr_t usr
+    system_u:object_r:var_t var
+
+La línea más importante en el contexto de seguridad es el tipo de contexto. Esta es la parte del contexto de seguridad que termina en _t. Indica a SELinux qué tipo de acceso se permite al objeto. En la política, se especifican reglas para definir qué tipo de usuario o qué tipo de rol tiene acceso a qué tipo de contexto. Por ejemplo, esto puede suceder utilizando una regla como la siguiente:
+
+    allow user_t bin_t:file {read execute gettattr};
+
+Esta regla de ejemplo establece que el usuario que tiene el tipo de contexto user_t (este usuario se llama el objeto fuente) tiene permiso para acceder a objetos de la clase "archivo" con el tipo de contexto bin_t (el objetivo), utilizando los permisos de lectura, ejecución y getattr.
+
+La política estándar que vas a utilizar contiene una gran cantidad de reglas. Para hacerla más manejable, las políticas a menudo se dividen en módulos. Esto permite al administrador activar o desactivar la protección para diferentes partes del sistema.
+
+Al compilar la política para tu sistema, tendrás la opción de trabajar con una política modular o una política monolítica, donde se utiliza una política enorme para proteger todo en tu sistema. Se recomienda encarecidamente usar una política modular y no una política monolítica. Las políticas modulares son mucho más fáciles de gestionar.
+
+
+
