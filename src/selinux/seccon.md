@@ -92,3 +92,7 @@ unconfined_u:object_r:out_file_t Message-11
 # the SELinux user id of the process that created the files
 # (see the process example above). The role remained as object_r.
 ```
+El nombre de usuario *system_u* no es obligatorio, se utiliza para significar a un usuario especial en la Política de Referencia. También se utiliza en algunas utilidades de SELinux.
+
+---
+**[[ PREV ]](type_enforcement.md)** **[[ TOP ]](#)** **[[ NEXT ]](subjects.md)**
