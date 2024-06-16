@@ -16,3 +16,17 @@ en dispositivos personales. IAM se asegura de que cada persona que deba tener ac
 desempeña en la ciberseguridad de una organización, IAM es una parte vital de la TI moderna.
 
 Con un sistema IAM, la organización puede verificar rápida y precisamente la identidad de una persona y que tenga los permisos necesarios para usar el recurso solicitado durante cada intento de acceso.
+
+### Cómo funciona IAM
+
+Hay dos partes para otorgar acceso seguro a los recursos de una organización: gestión de identidad y gestión de acceso.
+
+La gestión de identidad verifica un intento de inicio de sesión contra una base de datos de gestión de identidad, que es un registro continuo de todos los que deberían tener acceso. Esta información debe actualizarse constantemente a medida que las personas se unen o abandonan la organización, sus roles y proyectos cambian, y el alcance de la organización evoluciona.
+
+Ejemplos del tipo de información que se almacena en una base de datos de gestión de identidad incluyen nombres de empleados, títulos de trabajo, gerentes, subordinados directos, números de teléfono móvil y direcciones de correo electrónico personal. La coincidencia de la información de inicio de sesión de alguien, como su nombre de usuario y contraseña, con su identidad en la base de datos se llama autenticación.
+
+Para mayor seguridad, muchas organizaciones requieren que los usuarios verifiquen sus identidades con algo llamado autenticación multifactor (MFA). También conocida como verificación en dos pasos o autenticación de dos factores (2FA), MFA es más segura que usar solo un nombre de usuario y una contraseña. Agrega un paso al proceso de inicio de sesión donde el usuario debe verificar su identidad con un método de verificación alternativo. Estos métodos de verificación pueden incluir números de teléfono móvil y direcciones de correo electrónico personal. El sistema IAM generalmente envía un código de un solo uso al método de verificación alternativo, que el usuario debe ingresar en el portal de inicio de sesión dentro de un período de tiempo establecido.
+
+La gestión de acceso es la segunda mitad de IAM. Después de que el sistema IAM ha verificado que la persona o cosa que intenta acceder a un recurso coincide con su identidad, la gestión de acceso realiza un seguimiento de qué recursos tiene permiso para acceder esa persona o cosa. La mayoría de las organizaciones otorgan diferentes niveles de acceso a recursos y datos, y estos niveles se determinan por factores como el título del trabajo, la antigüedad, la autorización de seguridad y el proyecto.
+
+Otorgar el nivel correcto de acceso después de que se autentica la identidad de un usuario se llama autorización. El objetivo de los sistemas IAM es asegurarse de que la autenticación y la autorización ocurran correctamente y de manera segura en cada intento de acceso.
