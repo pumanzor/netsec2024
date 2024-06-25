@@ -16,6 +16,12 @@ Modelo Bell-Lapadula
    * Multilevel security
    * Access control matrix
  
+Set of subjects
+
+- Set of objects O
+- Set of access operations A
+  * execute, read, append, write
+ 
 
 
 
