@@ -14,3 +14,19 @@ información para asegurar que ninguna identidad desconocida o no reconocida (hu
 también deben realizar un seguimiento de todo lo relacionado con el ciclo de vida de una identidad y de sus intentos de acceder a los recursos. Esta "triple A" de autenticación, autorización y contabilidad 
 (AAA), y las funciones centrales de gestión de identidades en el corazón de esto, han sido reconocidas durante mucho tiempo como la piedra angular de la seguridad, y se conoce por el acrónimo IAAA. 
 Sin esto, ninguno de los controles de seguridad sabría qué actividades permitir y cuáles prevenir.
+
+Control de Acceso Físico y Lógico a Activos (5.1)
+Objetivos
+
+    Explicar las necesidades y los procesos para el acceso físico y lógico a los activos.
+
+Resumen
+
+Proveer un control positivo de los intentos de acceso (visualizar, modificar o mover) a los activos de una organización requiere un conjunto consistente y cohesivo de controles administrativos, físicos y lógicos (o técnicos). Por supuesto, todos los sistemas de control de acceso (AC) están impulsados por información: el inventario de activos de información, las políticas de clasificación y categorización, y los resultados de las decisiones tomadas a lo largo del ciclo de vida del sistema de identidad y AC y los sistemas de información que ayuda a proteger.
+
+La selección y uso de esos controles mencionados deben estar guiados por consideraciones de diseño basadas en los modelos de seguridad y modelos de AC empleados. Los controles administrativos, que dirigen las acciones de las personas, están basados en un contexto organizacional más amplio.
+
+Como sus nombres sugieren, los controles físicos restringen o guían los movimientos y acciones de los usuarios; los controles lógicos permiten, restringen, guían o de otra manera influyen en el flujo de información a través del sistema. Algunos de esos flujos de información pueden haber sido desencadenados por acciones físicas de un usuario, como una pulsación de tecla, un clic de ratón o moverse dentro del rango de captura de un detector de movimiento u otro sensor. Otros flujos de información resultaron de las acciones de elementos de software, que presumiblemente fueron activados por un usuario.
+
+Con el rápido crecimiento en el uso de robots semiautónomos y autopropulsados, es importante tener en cuenta que los usuarios en este contexto deben incluir tanto a humanos como no humanos. Veamos más de cerca el control de acceso físico y lógico en acción, como parte de un programa de seguridad de activos de información.
+
