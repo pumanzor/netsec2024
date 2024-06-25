@@ -55,3 +55,9 @@ We have a system with 5 subjects and 5 objects, 2 classifications and 2 categori
  - Objects: file_a, file_b, file_c, file_d, file_e
  -  Classifications : public, private
  - Categories: A, B
+
+Current access set b
+(Alice, file_b, r)
+(David, file_c, w)
+(Erika, file_a, a)
+
