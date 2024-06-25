@@ -22,6 +22,14 @@ Set of subjects
 - Set of access operations A
   * execute, read, append, write
  
+Set of security levels L with ordering ≤
+
+Functions
+
+- fS: S → L, maximum security level
+- fC: S → L, current security level
+- fO: O → L, security level of object
+ 
 
 
 
