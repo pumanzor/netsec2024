@@ -42,3 +42,11 @@ Como nombre, el control de acceso deja algunas palabras clave implícitas en lug
 
 Observe en esta figura que uno de los sujetos (presumiblemente un humano) está utilizando una computadora (que puede o no ser su propio activo) como intermediario para acceder a una base de datos en un servidor perteneciente a la organización. Esto destaca la complejidad de conocer al sujeto solicitante final.
 
+- El usuario ejecuta una aplicación en su dispositivo, a la cual su sistema operativo (SO) anfitrión le asigna un conjunto de identificaciones de proceso (IDs).
+
+- Uno de esos IDs de proceso, para un hilo particular, realiza llamadas al sistema para solicitar una conexión a la base de datos remota en el servidor; esto involucra a otros IDs de proceso que realizan estos servicios en nombre del proceso solicitante.
+
+- El servidor recibe esa solicitud de conexión remota y las solicitudes de acceso a datos subsiguientes.
+
+Para mantener la seguridad de los datos en el servidor, ese sistema de gestión de bases de datos necesita recibir un conjunto de credenciales que esencialmente digan: “El usuario con ID X, que ha sido reconocido y aprobado para acceder en su propio sistema, está solicitando acceso a estos registros y campos de datos, para que pueda realizar estas acciones CRUD. ¿Puedes aprobar?”
+
