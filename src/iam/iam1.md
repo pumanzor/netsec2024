@@ -68,3 +68,46 @@ Los sistemas de AC descentralizados o distribuidos pueden proporcionar mayores n
 
 **Híbrida.** En un enfoque híbrido, se ejerce control centralizado para cierta información y se permite control descentralizado para otra información. Una disposición típica es que la administración central sea responsable del acceso más amplio y básico, y los creadores/propietarios de archivos controlen los tipos de acceso o las habilidades de los usuarios para los archivos bajo su control. Por ejemplo, cuando se contrata a un nuevo empleado en un departamento, un administrador central podría proporcionar al empleado permisos de acceso basados en el elemento funcional al que están asignados, la clasificación del trabajo y la tarea específica para la que fueron contratados. El empleado podría tener acceso solo de lectura a una biblioteca de documentos de SharePoint de toda la organización y a archivos de informes de estado del proyecto, pero el mismo empleado podría tener privilegios de lectura y escritura en el informe semanal de actividades de su departamento. Además, si el empleado deja un proyecto, el gerente del proyecto puede cerrar fácilmente el acceso de ese empleado a ese archivo.
 
+**Control de Acceso como un Sistema**
+
+Los sistemas de AC se construyen utilizando las tres categorías de controles de seguridad. Los controles administrativos, que son las políticas, directivas, procedimientos, programas de capacitación y educación, estándares y requisitos de cumplimiento orientados a las personas, impulsan el diseño de flujos de trabajo y procesos para asegurar que se cumplan las necesidades de seguridad. A partir de esta base de diseño, los profesionales de seguridad y sistemas eligen la combinación correcta de controles físicos y lógicos o técnicos. Esto puede verse en muchas de las publicaciones de NIST, ISO y otras sobre sistemas de AC que se refieren tanto a políticas y procedimientos como a dispositivos y sistemas de reglas implementados en software.
+
+Los sistemas de AC físicos guían, previenen o permiten el movimiento de usuarios y dispositivos dentro de un espacio definido, como parte de un enfoque sistemático de la seguridad y la gestión de riesgos. El ejemplo más simple de un sistema de AC físico es una puerta que se puede cerrar con llave, limitando a las personas a un lado de la puerta o al otro. Los controles de acceso lógico funcionan dentro de los flujos de datos e información del propio sistema. El proceso de inicio de sesión del usuario demuestra un control lógico en operación: toma los flujos de datos generados o desencadenados por acciones físicas realizadas por el usuario (por ejemplo, pulsaciones de teclas y movimientos del ratón) y procesa esos datos para determinar si se concede o deniega al usuario el permiso para avanzar lógicamente al siguiente paso impulsado por el software que desea realizar.
+
+Una tarjeta inteligente, un controlador de entrada física, proporciona un ejemplo de una combinación de controles físicos y lógicos. El dispositivo lector de tarjetas en la puerta no opera directamente las cerraduras o los mecanismos de liberación de la puerta; en su lugar, los datos leídos de la tarjeta, y tal vez otros datos ingresados por el usuario, se envían a través de una conexión de red a un servidor de AC. Ese servidor determina si se debe conceder este intento de acceso específico, basado en su base de reglas almacenada y otros parámetros. Luego, responde al controlador de entrada con los comandos para abrir la puerta, o para denegar la entrada y tal vez tomar otra acción. Como parte de su función de contabilidad, el servidor de AC registra el intento y sus decisiones resultantes; el controlador de entrada toma nota en sus propios archivos de registro.
+
+Antes de la selección e implementación del tipo de AC lógico, el propietario de los datos necesita clasificar y categorizar su información. Cada uno de estos procesos complementarios identifica el tipo de protección (en términos de CIANA+PS) que los diseñadores del sistema y los profesionales de seguridad necesitan proporcionar y hasta qué punto, para satisfacer las necesidades generales de gestión de riesgos de información de la organización. Este paso debe ser el primero. Las pequeñas y medianas empresas a menudo procrastinan cuando se trata de un enfoque basado en el riesgo para el control de acceso, pensando que agrega demasiado tiempo de análisis, esfuerzo y costo; esto no tiene por qué ser el caso.
+
+
+
+
+
+Varias fuentes, como las que se encuentran en la hoja de ruta del Gobierno Federal de los EE. UU. para la Gestión de Identidad, Credenciales y Acceso (FICAM, por sus siglas en inglés), definen a un sistema de control de acceso como:
+
+* Autorizar o denegar el uso para un usuario individual.
+* Autorizar o permitir a un usuario individual.
+* Se basan en que el usuario tenga una identidad registrada y aprobada por el sistema.
+* Utilizan recursos de sistemas de información, como terminales, estaciones de trabajo, redes de comunicaciones, aplicaciones o software del sistema o datos.
+* Para el uso con este acceso, conceder instancias de los permisos registrados para esta identidad.
+
+
+Además, estas fuentes pueden contener orientación sobre la implementación de estas tareas, que son reconocibles como las etapas en el ciclo de vida de la gestión de identidades, que es el enfoque del Dominio 5.5. Algunas de las tecnologías utilizadas para implementar estos controles se discuten en la siguiente sección.
+
+Estas definiciones corren el riesgo de difuminar dos tareas principales: la gestión de identidades y el control de acceso. Como muchos de nosotros sabemos por experiencia personal, aunque somos una persona única, tenemos muchas identidades digitales diferentes, algunas de las cuales pueden ser aceptadas para propósitos de autenticación por algunos sistemas pero no por otros. Esos sistemas luego asumen las tareas separadas pero vitales de autorizar nuestros intentos de acceder a los recursos.
+
+Debido al volumen de usuarios remotos, muchos entornos de sistemas requieren un sistema de AC lógico mucho más complejo y matizado que el necesario para controlar el acceso físico. Como ilustra el ejemplo de entrada con tarjeta inteligente, ambos tipos de sistemas deben colaborar para lograr una seguridad general efectiva, pero es claramente más simple, en principio, restringir el movimiento físico y las acciones de las personas que controlar las muchas formas diferentes de acceso remoto, uso compartido de recursos y entornos de colaboración.
+
+Muchos controles de acceso lógico están integrados en el sistema operativo o pueden diseñarse como características de plataformas de aplicaciones o utilidades importantes, como los sistemas de gestión de bases de datos (DBMS). Pueden implementarse con paquetes de seguridad adicionales instalados en el sistema operativo. Dichos paquetes están disponibles para varios sistemas, como PC y mainframes. Además, los controles de acceso lógico pueden estar presentes en componentes especializados que regulan las comunicaciones entre computadoras y redes.
+
+
+**Control de Acceso Lógico**
+
+Considerando los datos críticos gestionados por Aeros 3 y sus amplios sistemas que a menudo son accedidos de forma remota, Tamika debe evaluar una amplia gama de controles para asegurar el acceso seguro a la información, sistemas, dispositivos, aplicaciones y otros activos.
+
+**Pregunta de Ensayo**
+
+**Pregunta 1**
+
+(5.1.1-6) ¿Cómo podría Tamika abordar los controles de acceso lógico para asegurar que solo el personal autorizado tenga acceso apropiado a diferentes categorías de activos, equilibrando las necesidades de seguridad y operativas?
+
+
