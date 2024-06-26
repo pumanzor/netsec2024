@@ -113,3 +113,60 @@ Estos datos desempeñan un papel importante en numerosas investigaciones, que va
 
 Los eventos desencadenantes son la ocurrencia de acciones que pueden requerir la toma de decisiones humanas para resolver. Ejemplos pueden incluir intentos de usuarios de ir más allá de los límites establecidos por los privilegios de acceso de su identidad (ya sea una falla de autenticación o autorización). Estos desencadenantes podrían causar que se activen alarmas en tiempo real o ser parte de informes de estado rutinarios por parte del sistema.
 
+**Autenticación sin Contraseña**
+
+Muchas brechas de seguridad son causadas por contraseñas débiles, reutilizadas y robadas. La autenticación sin contraseña implica verificar la identidad de un usuario con algo distinto a una contraseña. Aunque algunos argumentan a favor de los beneficios de la autenticación sin contraseña, el denominador común son los problemas que han plagado a las contraseñas; por ejemplo, son fácilmente comprometidas, costosas y difíciles de gestionar, y proporcionan una mala experiencia de usuario. La autenticación sin contraseña puede adoptar muchas formas dependiendo del caso de uso, incluyendo notificaciones push o autenticación biométrica como huellas dactilares.
+
+**Gestión de Sesiones**
+
+Las sesiones se crean, gestionan, soportan y luego se terminan mediante una variedad de protocolos que forman parte de la capa de sesión, o Capa 5, del modelo de red de 7 capas OSI. Algunos de estos protocolos interactúan con las funciones de gestión de identidad y control de acceso en los puntos finales, servidores u otros dispositivos reales o virtualizados y con los IDs de usuario en cuyo nombre se ha creado y se está soportando la sesión.
+
+Desde la perspectiva de IAM, la gestión de sesiones autenticadas es el conjunto de actividades que se centran en garantizar que el sistema mantenga un camino ininterrumpido de protección para los recursos durante toda la sesión. Esto involucra a los sistemas IAM en uso por todos los nodos involucrados en la sesión, y, en la mayoría de los casos, esto se basará en certificados x.509. El segundo de los diez principales riesgos de seguridad de aplicaciones web de OWASP es la autenticación y gestión de sesiones rota. RFC 2965 proporciona un ejemplo de cómo mantener la gestión de sesiones con cookies. Cuando un usuario accede a un sitio web, las acciones e identidad del usuario se rastrean a través de varias solicitudes de ese sitio web. El estado de estas interacciones se mantiene en una cookie de sesión. La evidencia de este estado se mantiene vinculando todas las nuevas conexiones a lo largo de una sesión con la cookie. El manejo de cookies logra la no repudio, aprovechando efectivamente una pista de auditoría de la actividad de la sesión.
+
+Aunque comúnmente consideramos la gestión de sesiones como un requisito para gestionar y controlar el acceso a recursos en línea como una cuenta bancaria, no se limita a esta área. La gestión de sesiones es el proceso de rastrear y asegurar múltiples solicitudes a cualquier servicio provenientes del mismo sujeto. Primero, el sujeto debe ser identificado como un usuario legítimo. Segundo, se rastrea información adicional como cuándo (fecha y hora), desde dónde se accede lógicamente (dirección IP o MAC) y dónde está físicamente el sujeto (qué puerta, torniquete). Por último, se rastrea cuándo termina la sesión y qué acciones se tomaron durante la sesión.
+
+La presentación de la autenticación proporciona la información como un identificador de sesión (ID de sesión). Los IDs de sesión son valores largos y aleatorios para hacerlos inviables de adivinar, y solo se usan una vez, de ahí el término "nonce" o por qué los números solo pueden usarse una vez.
+
+Con la mayoría de las transferencias bancarias, por ejemplo, se crea un número de 30 dígitos cuando se inicia una transferencia. Este valor puede usarse más tarde para verificar quién, cuándo y dónde comenzó la transferencia. De manera similar, cuando un usuario inicia sesión en un reino de seguridad Kerberos, el ID del evento es 4768. Luego se solicita y genera un ticket de autenticación de Kerberos, y los códigos de evento asociados proporcionarán la función de auditoría necesaria siguiendo la solicitud.
+
+Una organización debe rastrear todos los IDs de sesión y estar preparada para terminar forzosamente las sesiones de usuarios o sistemas conectados cuando se alcanza un período de inactividad, como en la banca por internet, o cuando ocurren anomalías dentro de una sesión. Estos pueden ser un cambio repentino de fuente, como un cambio en la dirección IP de origen, múltiples inicios de sesión detectados, que ocurre cuando los usuarios comparten los detalles de su cuenta, o un token de acceso de usuario se usa dos veces para iniciar sesión en un edificio sin un cierre de sesión previo.
+
+Aunque la creación de un ID de sesión es automática y aleatoria, el uso de cookies presenta otro conjunto de problemas potenciales para la gestión de sesiones, ya que el ID de sesión a menudo se almacena dentro de la cookie. Si se puede capturar la cookie de sesión de un usuario o su transmisión es retrasada por un atacante, podría ser posible simplemente reproducir la cookie en un sistema, permitiendo así al atacante iniciar sesión con lo que son, esencialmente, credenciales robadas. Esto se conoce como una repetición de sesión o simplemente un ataque de repetición.
+
+**Implementación de Gestión de Identidad y Acceso (IAM)**
+
+La parte más difícil y más importante de un proyecto de IAM es implementar la política creada. Hay varias formas de implementar. El primer paso para una implementación exitosa es comprender las necesidades, desafíos y deseos de su organización. Cada organización es diferente; algunas tienen una alta tasa de rotación de empleados, mientras que otras son más estables por naturaleza. Algunas basan la mayoría o todos sus sistemas en la nube, mientras que otras organizaciones más tradicionales tienen la mayoría o todos sus sistemas internamente. El proyecto IAM requiere una revisión meticulosa de los activos, necesidades empresariales y capacidades de una organización, ya que un sistema IAM debe identificar, autenticar y autorizar a individuos, procesos, sistemas y dispositivos que utilizan los diferentes recursos de la organización.
+
+La implementación de IAM es la implementación de los requisitos del ciclo de vida de la identidad y debe manejarse en consecuencia. Implementar un IAM no reduce la responsabilidad de la organización de asegurar que sus procesos se manejen según lo deseado y de mantener los controles relevantes para detectar y reducir las posibilidades de incumplimiento.
+
+**Modelo de Identidad ISO**
+
+ISO está desarrollando un marco para la gestión de identidades (ISO/IEC FDIS 24760-1). Su estándar elaborará trabajos previos, incluyendo la serie ISO 2700x que identifica el control de acceso (AC) como uno de sus requisitos fundamentales. La norma ISO 24760 incluirá referencias a la terminología, arquitectura y requisitos. Hay otros estándares ISO que abordan la gestión de identidades (IdM/IAM), incluyendo la serie ISO 29100 que aborda la privacidad, la ISO 29003 sobre Verificación y Prueba de Identidad, y otros.
+
+**Gestión de Identidades Federadas (FIM)**
+
+Una federación de identidades se aplica donde uno o más sistemas permiten a los usuarios iniciar sesión basándose en la autenticación contra uno de los sistemas que participan en la federación. Cuando diferentes organizaciones tienen la necesidad de compartir información común, se buscan soluciones FIM. Pensemos en empresas que usan plataformas de redes sociales como LinkedIn y Twitter pero tienen diferentes modelos de negocio y objetivos y misiones corporativas.
+
+A pesar de sus diferentes estrategias y objetivos comerciales, comparten una base de clientes común. Los clientes comunes entre LinkedIn y Twitter pueden, en ocasiones, querer que la información que reside en la plataforma de un proveedor de servicios (SP) aparezca automáticamente y de manera sincronizada en la plataforma de otro SP.
+
+FIM actualmente utiliza dos estándares ampliamente aceptados, SAML y OAuth, para proporcionar declaraciones legibles por humanos y procesables por máquinas sobre identidad, autenticación y autorización.
+
+Cada uno utiliza tecnologías y enfoques diferentes para abordar las mismas necesidades fundamentales. Ambos están ampliamente utilizados en el mercado, y los marcos de implementación como OpenID Connect se basan en una u otra de estas arquitecturas. También hay una arquitectura de referencia promulgada por la organización Open Authentication, llamada OATH, que busca alejarse aún más de los servicios propietarios de identidad y autenticación. En un foro digital reciente de KNOW Identity, varios de los panelistas expresaron que los grandes actores del sistema, como Microsoft y Apple, ya no desean monetizar la identidad como servicio, y en su lugar ven las oportunidades comerciales que crea una identidad digital omnipresente y confiable.
+
+La gestión de identidades se trata de confianza. Un servidor de autenticación debe confiar en las credenciales proporcionadas por una entidad. Con todos los sistemas de gestión de identidades, debe adoptarse el concepto de "Confiar, pero verificar". La identificación es la afirmación de una identidad única, y la autenticación es la verificación de esa afirmación. Dentro de una red o dominio, estos dos procesos pueden ser llevados a cabo por Kerberos, que proporciona el proceso de tres pasos de autenticación, autorización y contabilidad.
+
+Sin embargo, esta necesidad de verificar se vuelve más difícil cuando un conjunto de credenciales de una organización puede usarse para acceder a servicios en una organización diferente: usar tus credenciales de Facebook para iniciar sesión en LinkedIn, por ejemplo. FIM permite este proceso de crear una relación de confianza entre diferentes dominios de seguridad. Estos dominios de confianza luego proporcionan acceso (verificación) utilizando identidades digitales comunes que consisten en tres componentes: el cliente o principal, el SP o RP, y el proveedor de identidad (IdP).
+
+El IdP es un servicio de intermediación. Su papel es proporcionar la afirmación de que el principal es quien o lo que dice ser. El SP mantiene un servidor de autorización y es responsable de la decisión final de aceptar o rechazar. El IdP también se conoce como IdP residente (local o titular), lo que significa que su papel se limita a la afirmación de identidades dentro de su propio dominio de seguridad (confianza). Dentro del modelo FIM, cada organización o dominio de seguridad (confianza) se convertirá en un IdP federado, lo que significa que proporcionará la afirmación de la validez de las credenciales pertenecientes a un dominio de seguridad (confianza) diferente.
+
+La Figura 5.3 muestra un ejemplo de los pasos involucrados en FIM:
+
+1. El usuario, Sue, tiene una cuenta en Any Bank Inc. y quiere acceder a su cuenta en línea. Cada vez que hace esto, hace clic en el botón "Login" en su sitio web, lo que genera una solicitud de acceso a su banco.
+2. Any Bank Inc. envía una solicitud de verificación al IdP.
+3. El IdP presenta a Sue con un ID de inicio de sesión.
+4. Sue proporciona algunas credenciales de identificación para verificar su identidad, que se envían para verificación a la base de datos de identidad del IdP.
+5. Esta base de datos envía la verificación al IdP.
+6. El IdP notifica al banco que la persona que está iniciando sesión es, de hecho, Sue.
+7. El banco permite que Sue inicie sesión.
+
+
